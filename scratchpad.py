@@ -7,13 +7,13 @@ import datetime
 This script creates an empty file.
 """
 
-filename=datetime.datetime.now()
+filename = datetime.datetime.now()
 
 #Create empty file
 def create_file():
     """ This function creates an empty file"""
 
-    with open (str(filename),"w") as file:
+    with open ("files/" + filename.strftime("%Y-%m-%d-%H-%M") + ".txt","w") as file:
         file.write("")
 
 create_file()
