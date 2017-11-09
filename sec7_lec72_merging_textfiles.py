@@ -4,9 +4,13 @@ import glob
 
 
 #Create empty file
-
 filename=datetime.datetime.now()
-lst = ["files/sec7lec72/file1.txt", "files/sec7lec72/file2.txt", "files/sec7lec72/file3.txt"]
+
+#Sample Data array
+lst = ["files/sec7lec72/file1.txt", "files/sec7lec72/file2.txt", "files/sec7lec72/file3.txt", "files/sec7lec72/file4.txt"]
+
+#p
+filenames = glob.glob("files/sec7lec72/*.txt")
 '''
 def read_files():
     for i in lst:
@@ -15,7 +19,7 @@ def read_files():
         f.close()
         print (i)
 '''
-def create_file_fill():
+def create_file():
     with open("files/" + filename.strftime("%Y-%m-%d-%H-%M-%s") + ".txt", "w") as file:
         file.write("")
         for i in lst:
@@ -25,12 +29,8 @@ def create_file_fill():
 
         file.close()
 
+create_file()
 
-
-create_file_fill()
-
-
-filenames = glob.glob("files/sec7lec72/*.txt")
 
 with open("files/" + datetime.datetime.now().strftime("%Y-%m-%d-%H-%M-%s") + ".txt", "w") as file:
     for filename in filenames:
