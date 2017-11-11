@@ -1,10 +1,10 @@
 import json
-
 from difflib import get_close_matches
 
-
+#Dictionary words and defs json file
 words = json.load(open("source/data.json"))
 
+#Function returns definitions
 def define(w):
     # w = w.lower() another way to ensure word case is the same
     if w in words:
@@ -22,4 +22,10 @@ def define(w):
 
 word = input("Enter a word: ").lower()
 
-print (define(word))
+output = (define(word))
+
+if type(output) == list:
+    for item in output:
+        print (item)
+    else:
+        print (output)
