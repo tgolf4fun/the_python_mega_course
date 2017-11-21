@@ -9,6 +9,8 @@ def define(w):
     # w = w.lower() another way to ensure word case is the same
     if w in words:
         return words[w]
+    elif w.title() in words:
+        return words[w.title()]
     elif len(get_close_matches(w, words.keys())) > 0:
         yn = input("Did you possibley mean \"%s\" instead?  Enter 'Y' or 'N' " % get_close_matches(w, words.keys())[0])
         if yn == "Y":
